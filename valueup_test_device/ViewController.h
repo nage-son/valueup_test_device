@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate> {
+    @private
+    NSMutableArray *_dataProvider;
+    
+    NSInteger _selectedId;
+    NSInteger _deleteId;
+    NSIndexPath *_deletedIndexPath;
+}
 
+@property (weak, nonatomic) IBOutlet UITableView *listTableView;
+- (IBAction)goWriteMode:(id)sender;
+- (IBAction)refresh:(id)sender;
 
 @end
 

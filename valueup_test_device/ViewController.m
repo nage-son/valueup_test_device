@@ -25,8 +25,6 @@
     
     self.navigationItem.title = @"목록";
     
-    [self.listTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
-    
     _dataProvider = [[NSMutableArray alloc] init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -109,16 +107,31 @@
 }
 
 - (UITableViewCell*)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.listTableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    UITableViewCell *cell = [self.listTableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_IDENTIFIER];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CELL_IDENTIFIER];
     }
     
     if (_dataProvider.count > 0) {
         NSDictionary *data = [_dataProvider objectAtIndex:indexPath.row];
         
         cell.textLabel.text = [data objectForKey:@"title"];
+        
+        NSNumber *num = [data objectForKey:@"createdAt"];
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:([num longValue] / 1000)];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+        
+        NSString *formattedDate = [formatter stringFromDate:date];
+        NSLog(@"stamp : %ld", [num longValue]);
+        NSLog(@"date : %@", formattedDate);
+        
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
+        cell.detailTextLabel.text = formattedDate;
     }
     
     return cell;

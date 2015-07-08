@@ -10,36 +10,16 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lXb-bP-6YN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MqY-Cr-idl">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CG0-CS-sZK"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y9K-kz-7BH"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="MqY-Cr-idl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="264-dd-ewy"/>
-                            <constraint firstItem="MqY-Cr-idl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Pm-8L-47a"/>
-                            <constraint firstAttribute="bottom" secondItem="MqY-Cr-idl" secondAttribute="bottom" id="bb7-XE-naT"/>
-                            <constraint firstAttribute="trailing" secondItem="MqY-Cr-idl" secondAttribute="trailing" id="icW-GM-Je2"/>
-                        </constraints>
-                    </view>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="BYZ-38-t0r" id="kBT-Q2-5zq"/>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="zRv-Ka-b5g"/>
+                        </connections>
+                    </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="glq-1N-xhL">
@@ -56,7 +36,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="listTableView" destination="MqY-Cr-idl" id="gpl-bG-W7L"/>
+                        <outlet property="listTableView" destination="lXb-bP-6YN" id="pAx-tJ-5Jm"/>
                         <segue destination="hHW-bi-C6y" kind="presentation" identifier="goWriteView" id="cW1-gK-KhA"/>
                         <segue destination="Fac-YL-4td" kind="show" identifier="goDetailView" id="eAG-3R-rTh"/>
                     </connections>
@@ -265,6 +245,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3I8-0m-gxy"/>
+        <segue reference="cW1-gK-KhA"/>
     </inferredMetricsTieBreakers>
 </document>

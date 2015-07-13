@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [_titleField.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [_titleField.layer setBorderWidth:1.0];
+    
+    [_contentField.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [_contentField.layer setBorderWidth:1.0];
+    
     if (_targetId > 0) {
         //TODO: 데이터 호출
         NSLog(@"modify target id : %ld", _targetId);

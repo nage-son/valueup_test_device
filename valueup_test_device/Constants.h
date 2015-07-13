@@ -16,7 +16,8 @@
 #define HOST @"http://localhost:8080"
 #else
 #ifdef WIFI
-#define HOST @"http://192.168.0.13:8080"
+//#define HOST @"http://192.168.0.13:8080"
+#define HOST @"http://192.168.0.116:8080"
 #else
 #define HOST @"http://23.236.53.102:8080/project-valueup"
 #endif

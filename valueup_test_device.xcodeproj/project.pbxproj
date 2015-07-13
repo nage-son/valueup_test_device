@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2478C61B4E6538002253D4 /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2478C51B4E6538002253D4 /* CommentListViewController.m */; };
+		1A2478C91B4E6601002253D4 /* CommentWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2478C81B4E6601002253D4 /* CommentWriteViewController.m */; };
 		1A54F55A1B4B9EBC00326E6B /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A54F5591B4B9EBC00326E6B /* WriteViewController.m */; };
 		1A571F151B4B66AE00828FE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A571F141B4B66AE00828FE8 /* main.m */; };
 		1A571F181B4B66AE00828FE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A571F171B4B66AE00828FE8 /* AppDelegate.m */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A2478C41B4E6538002253D4 /* CommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
+		1A2478C51B4E6538002253D4 /* CommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
+		1A2478C71B4E6601002253D4 /* CommentWriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentWriteViewController.h; sourceTree = "<group>"; };
+		1A2478C81B4E6601002253D4 /* CommentWriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentWriteViewController.m; sourceTree = "<group>"; };
 		1A54F5581B4B9EBC00326E6B /* WriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteViewController.h; sourceTree = "<group>"; };
 		1A54F5591B4B9EBC00326E6B /* WriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
 		1A571F101B4B66AE00828FE8 /* valueup_test_device.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = valueup_test_device.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +140,10 @@
 				1A54F5581B4B9EBC00326E6B /* WriteViewController.h */,
 				1A54F5591B4B9EBC00326E6B /* WriteViewController.m */,
 				1AB04AB41B4BA7AA00016D10 /* Constants.h */,
+				1A2478C41B4E6538002253D4 /* CommentListViewController.h */,
+				1A2478C51B4E6538002253D4 /* CommentListViewController.m */,
+				1A2478C71B4E6601002253D4 /* CommentWriteViewController.h */,
+				1A2478C81B4E6601002253D4 /* CommentWriteViewController.m */,
 			);
 			path = valueup_test_device;
 			sourceTree = "<group>";
@@ -346,9 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2478C61B4E6538002253D4 /* CommentListViewController.m in Sources */,
 				1A571F1B1B4B66AE00828FE8 /* ViewController.m in Sources */,
 				1A571F181B4B66AE00828FE8 /* AppDelegate.m in Sources */,
 				1A571F151B4B66AE00828FE8 /* main.m in Sources */,
+				1A2478C91B4E6601002253D4 /* CommentWriteViewController.m in Sources */,
 				1A571F481B4B67D100828FE8 /* TableViewController.m in Sources */,
 				1A54F55A1B4B9EBC00326E6B /* WriteViewController.m in Sources */,
 				1A9472091B4BD19200638CB4 /* DetailViewController.m in Sources */,

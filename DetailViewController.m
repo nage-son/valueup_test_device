@@ -8,8 +8,10 @@
 
 #import "DetailViewController.h"
 #import <AFNetworking.h>
+#import <QuartzCore/QuartzCore.h>
 #import "Constants.h"
 #import "WriteViewController.h"
+#import "CommentListViewController.h"
 
 @interface DetailViewController ()
 
@@ -25,6 +27,12 @@
     
     self.navigationItem.title = @"상세";
     
+    [_commentField.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [_commentField.layer setBorderWidth:1.0];
+    
+    [_commentButton.layer setBorderColor:[[[UIColor blueColor] colorWithAlphaComponent:0.3] CGColor]];
+    [_commentButton.layer setBorderWidth:1.0];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveRefresh:)
                                                  name:@"refreshPost"
@@ -38,21 +46,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
     if ([segue.identifier isEqualToString:@"goModifyView"]) {
         WriteViewController *targetViewController = (WriteViewController *)segue.destinationViewController;
         
         targetViewController.targetId = _targetId;
+    } else if ([segue.identifier isEqual:@"goCommentListView"]) {
+        CommentListViewController *targetViewController = (CommentListViewController *)segue.destinationViewController;
+        
+        targetViewController.postId = _targetId;
     }
 }
 
@@ -96,5 +100,29 @@
 
 - (IBAction)goModifyView:(id)sender {
     [self performSegueWithIdentifier:@"goModifyView" sender:self];
+}
+
+- (IBAction)saveComment:(id)sender {
+    NSError *error;
+    NSString *commentText = _commentField.text;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[\\s\\n]" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    if ([regex stringByReplacingMatchesInString:commentText options:0 range:NSMakeRange(0, commentText.length) withTemplate:@""].length == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"댓글을 입력하여 주세요."
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"확인", nil];
+        
+        alert.tag = ALERT_EMPTY_TITLE;
+        
+        [alert show];
+        
+        return;
+    }
+}
+
+- (IBAction)goCommentList:(id)sender {
+    [self performSegueWithIdentifier:@"goCommentListView" sender:self];
 }
 @end
